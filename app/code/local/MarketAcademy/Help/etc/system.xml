@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!--
+    Market Academy SAS 
+    NOTICE OF LICENSE
+    This source file is subject to the Open Software License (OSL 3.0)
+    It is available through the world-wide-web at this URL:
+    http://opensource.org/licenses/osl-3.0.php
+    @copyright  Copyright (c) Market Academy SAS. (http://www.market-academy.com)
+    @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+-->
+<config>
+    <tabs>
+        <mavideohelp translate="label" module="mavideohelp">
+            <label>Aide - Tutos vidéos</label>
+            <sort_order>100</sort_order>
+        </mavideohelp>
+    </tabs>
+     
+    <sections>
+        <mavideohelp_options translate="label" module="mavideohelp">
+            <label>Configuration du module</label>
+            <tab>mavideohelp</tab>
+            <sort_order>999999000</sort_order> 
+            <frontend_type>text</frontend_type>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <section_one translate="label">
+                    <label>Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>999999999</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>                
+                    <fields>
+                        <mavideohelp_alwaysOpen translate="label">
+                            <label>Panneau toujours ouvert :</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </mavideohelp_alwaysOpen>
+                    </fields>
+                </section_one>
+            </groups>                
+        </mavideohelp_options>
+    </sections>
+</config>

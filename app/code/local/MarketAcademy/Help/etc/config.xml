@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Market Academy SAS 
+    NOTICE OF LICENSE
+    This source file is subject to the Open Software License (OSL 3.0)
+    It is available through the world-wide-web at this URL:
+    http://opensource.org/licenses/osl-3.0.php
+    @copyright  Copyright (c) Market Academy SAS. (http://www.market-academy.com)
+    @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+-->
+<config>
+  <modules>
+    <MarketAcademy_Help>
+      <version>1.0.0.2</version>
+    </MarketAcademy_Help>
+  </modules>
+  <global>
+    <models>
+      <mavideohelp>
+        <class>MarketAcademy_Help_Model</class>
+        <resourceModel>mavideohelp_mysql4</resourceModel>
+      </mavideohelp>
+       <mavideohelp_mysql4>
+          <class>MarketAcademy_Help_Model_Mysql4</class>
+          <entities>
+              <mavideohelp>
+                <table>markethelp_seen</table>
+              </mavideohelp>
+              <Users>
+                <table>markethelp_users</table>
+              </Users>
+          </entities>
+      </mavideohelp_mysql4>
+    </models>
+    <resources>
+      <mavideohelp_setup>
+        <setup>
+          <module>MarketAcademy_Help</module>
+        </setup>
+        <connection>
+          <use>core_setup</use>
+        </connection>
+      </mavideohelp_setup>
+    </resources>
+    <blocks>
+      <mavideohelp>
+        <class>MarketAcademy_Help_Block</class>
+      </mavideohelp>
+    </blocks>
+    <helpers>
+      <mavideohelp>
+        <class>MarketAcademy_Help_Helper</class>
+      </mavideohelp>
+    </helpers>
+  </global>
+
+  <admin>
+    <routers>
+      <MarketAcademy_Help>
+        <use>admin</use>
+        <args>
+          <module>MarketAcademy_Help_Adminhtml</module>
+          <frontName>mavideohelp</frontName>
+        </args>
+      </MarketAcademy_Help>
+    </routers>
+  </admin>
+  <adminhtml>
+    <layout>
+      <updates>
+        <mavideohelp>
+          <file>MarketAcademy_Help.xml</file>
+        </mavideohelp>
+      </updates>
+    </layout>
+    <translate>
+      <modules>
+        <mavideohelp>
+          <files>
+            <default>MarketAcademy_Help.csv</default>
+          </files>
+        </mavideohelp>
+      </modules>
+    </translate>
+    <!-- Onglet configuration -->
+    <acl>
+      <resources>
+        <admin>
+          <children>
+            <system>
+              <children>
+                <config>
+                  <children>
+                    <mavideohelp_options>
+                      <title>Configurer le module de tutos vidéos</title>
+                    </mavideohelp_options>
+                  </children>
+                </config>
+              </children>
+            </system>
+          </children>
+        </admin>
+      </resources>
+    </acl>
+    <events>
+      <controller_action_predispatch>
+        <observers>
+          <mavideohelp_notification>
+            <type>singleton</type>
+            <class>mavideohelp/feed</class>
+            <method>observe</method>
+          </mavideohelp_notification>
+        </observers>
+      </controller_action_predispatch>
+    </events>
+  </adminhtml>
+  <default>
+      <mavideohelp_options>
+          <section_one>
+              <mavideohelp_alwaysOpen>1</mavideohelp_alwaysOpen>
+          </section_one>
+      </mavideohelp_options>
+  </default>
+</config>

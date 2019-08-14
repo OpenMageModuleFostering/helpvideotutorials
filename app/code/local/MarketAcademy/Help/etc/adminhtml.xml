@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<!--
+    Market Academy SAS 
+    NOTICE OF LICENSE
+    This source file is subject to the Open Software License (OSL 3.0)
+    It is available through the world-wide-web at this URL:
+    http://opensource.org/licenses/osl-3.0.php
+    @copyright  Copyright (c) Market Academy SAS. (http://www.market-academy.com)
+    @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+-->
+<config>
+    <menu>
+        <markethelp_menu translate="title" module="mavideohelp">
+            <title>Aide - Tutos vidéos</title>
+            <action>mavideohelp/admin/index</action>
+            <sort_order>9999</sort_order>
+            <children>
+                <table translate="title" module="mavideohelp">
+                    <title>Voir tous les tutos</title>
+                    <action>mavideohelp/admin/index</action>
+                    <sort_order>0</sort_order>
+                </table>
+                <config translate="title" module="mavideohelp">
+                    <title>Configuration</title>
+                    <action>adminhtml/system_config/edit/section/mavideohelp_options</action>
+                    <sort_order>1</sort_order>
+                </config>
+            </children>
+        </markethelp_menu>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <markethelp_menu translate="title" module="mavideohelp">
+                        <title>Aide - Tutos vidéos</title>
+                        <sort_order>999999</sort_order>
+                        <children>
+                            <!-- child items go here -->
+                            <view translate="title" module="mavideohelp">
+                                <title>Voir le panneau de droite</title>
+                                <sort_order>10</sort_order>
+                            </view>
+                            <view_videos translate="title" module="mavideohelp">
+                                <title>Marquer une video comme "vue"</title>
+                                <sort_order>11</sort_order>
+                            </view_videos>
+                        </children>
+                    </markethelp_menu>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

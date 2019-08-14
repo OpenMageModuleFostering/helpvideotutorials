@@ -1,0 +1,49 @@
+<?php
+ /**
+ * Market Academy SAS 
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * It is available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @copyright  Copyright (c) Market Academy SAS. (http://www.market-academy.com)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+	$helping = mage::getModel('MarketAcademy_Help_Model_Service');
+
+    $store      = Mage::app()->getStore();
+	$isOpen 	= Mage::getStoreConfig('mavideohelp_options/section_one/mavideohelp_alwaysOpen',$store);
+
+	if ($isOpen) {
+		$imgUrl = $helping->getBtnUrl("right");
+
+	}else{
+		$imgUrl = $helping->getBtnUrl("left");
+	}
+?>
+<script type="text/javascript">
+	var URLBTNRIGHT ="<?php echo $helping->getBtnUrl("right") ?>";
+	var URLBTNLEFT = "<?php echo $helping->getBtnUrl("left") ?>"; 
+</script>
+<div id="openTutosVideo" >
+	<a href="javascript:;" >
+		<img src="<?php echo $imgUrl ?>"  id="imgBtnOpen" alt="<?php echo $this->__('Tout les Tutos Market Academy');?>" class="MA_logo">
+	</a>
+</div>
+
+<?php 
+	if ($isOpen) {
+		?>
+		<script type="text/javascript">
+			Event.observe(window, 'load', function() {
+				var wrapper = document.getElementsByClassName("wrapper")[0];
+				var MA 		= document.getElementById('maHelp');
+				document.getElementById('openTutosVideo').toggleClassName('panelOpen');
+				wrapper.toggleClassName('maVideosTrue');
+				MA.toggleClassName('actif');
+			});
+		</script>
+		<?php 
+	}
