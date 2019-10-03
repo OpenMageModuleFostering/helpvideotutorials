@@ -1,7 +1,7 @@
 {
-    "name": "OpenMageModuleFostering\/helpvideotutorials",
+    "name": "openmage-module-fostering\/helpvideotutorials",
     "type": "magento-module",
-    "license": "OSL",
+    "license": "OSL-3.0",
     "homepage": "",
     "description": "The Help \u2013 Video Tutorials module has been created to guide you, directly from your Magento workspace.",
     "authors": [
