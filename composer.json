@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/helpvideotutorials",
+    "name": "OpenMageModuleFostering\/helpvideotutorials",
     "type": "magento-module",
     "license": "OSL",
     "homepage": "",
-    "description": "The Help – Video Tutorials module has been created to guide you, directly from your Magento workspace.",
+    "description": "The Help \u2013 Video Tutorials module has been created to guide you, directly from your Magento workspace.",
     "authors": [
-    {
-        "name": "Market Academy",
-        "email": "contact@market-academy.com"
-    }
-],
+        {
+            "name": "Market Academy",
+            "email": "contact@market-academy.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
